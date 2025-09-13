@@ -126,19 +126,3 @@ gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker
 - **uv**: Fast Python package manager
 - **Spotify Web API**: Music data source
 
-## 🤝 Contributing
-
-1. Fork the project
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 📞 Contact
-
-- Project Link: [https://github.com/yourusername/spotify-feature-search](https://github.com/yourusername/spotify-feature-search)
-- Issue Tracker: [https://github.com/yourusername/spotify-feature-search/issues](https://github.com/yourusername/spotify-feature-search/issues)
