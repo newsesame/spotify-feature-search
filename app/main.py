@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from app.routes import router
 import os
 from contextlib import asynccontextmanager
+from fastapi.middleware.cors import CORSMiddleware
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -17,6 +18,14 @@ app = FastAPI(
     title="Spotify Feature Search API",
     description="A simple FastAPI application",
     version="1.0.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # 前端地址
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["*"],
 )
 
 # Include routes
