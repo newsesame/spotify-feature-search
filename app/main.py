@@ -1,5 +1,16 @@
 from fastapi import FastAPI
 from app.routes import router
+import os
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup
+    yield
+    # Shutdown
+    # Close any open sessions
+    if hasattr(app.state, 'spotify_service'):
+        await app.state.spotify_service.close()
 
 # Create FastAPI application
 app = FastAPI(

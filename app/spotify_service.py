@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 
 from dotenv import load_dotenv
 
-load_dotenv
+load_dotenv()
 
 client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
@@ -46,10 +46,10 @@ class SpotifyAPIService:
         logging.info(self._access_token, self.client_id, self.client_secret)
 
 
-        if (self._access_token and 
-            self._token_expires_at and 
-            datetime.now() < self._token_expires_at):
-            return self._access_token
+        # if (self._access_token and 
+        #     self._token_expires_at and 
+        #     datetime.now() < self._token_expires_at):
+        #     return self._access_token
         
         auth_string = f"{self.client_id}:{self.client_secret}"
         auth_bytes = auth_string.encode("utf-8")

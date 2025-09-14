@@ -92,10 +92,14 @@ async def get_playlist_tracks_separated(playlist_id: str):
             
     except Exception as e:
         # Return error using ApiResponse
-
+        print(f"Error in get_playlist_tracks_separated: {str(e)}")
         return JSONResponse(
             status_code=500,
-            content=None
+            content={
+                "success": False,
+                "message": f"Internal server error: {str(e)}",
+                "data": None
+            }
         )
 
 @router.get("/test")
